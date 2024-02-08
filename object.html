@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let a = [10, 20,"garvuit","123","ashish"];
+
+      //   console.log(a);
+
+      //object
+      //   const person = {
+      //     name: "ashish",
+      //     mobile: "12345",
+      //     age: 21,
+      //   };
+
+      //   const per = {
+      //     name: "kishan",
+      //     mobile: "321",
+      //     age: "21",
+      //   };
+
+      //   person.surname = "dabhi";
+      //   console.log(person);
+      //   console.log(per.name);
+
+      //   console.log(person.name);
+      //   console.log(person.mobile);
+
+      let arr = [
+        {
+          name: "ashish",
+          mobile: "12345",
+          age: 21,
+          available: false,
+        },
+        {
+          name: "kishan",
+          mobile: "321",
+          age: "21",
+          available: true,
+        },
+        {
+          name: "milan",
+          mobile: "321",
+          age: "21",
+          available: false,
+        },
+        {
+          name: "bhagat",
+          mobile: "321",
+          age: "21",
+          available: false,
+        },
+        {
+          name: "magan",
+          mobile: "321",
+          age: "21",
+          available: false,
+        },
+      ];
+
+      arr.push({
+        name: "dipen",
+        mobile: "12",
+        age: 12,
+      });
+      console.log(arr);
+
+      let result = arr.filter((val) => val.name !== "milan");
+      console.log(result);
+
+      //   arr.map((val, ind) => {
+      //     // console.log(val.name);
+      //     if (val.name === "bhagat") {
+      //       console.log("bhagat malyo");
+      //     } else {
+      //       console.log("khovai gayo");
+      //     }
+      //   });
+
+      //   console.log(arr[0].name);
+    </script>
+  </body>
+</html>
