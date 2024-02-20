@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="email" id="email" />
+    <input type="text" name="password" id="pass" />
+    <button onclick="submit()">Submit</button>
+
+    <script>
+      //arrow
+      //   let test = () => {
+      //     console.log("test");
+      //   };
+
+      //   test();
+
+      //spread operator
+      //   let arr = [1, 2, 3, "hello"];
+      //   let test = [23, 24];
+      //   let copy = [...arr, ...test];
+      //   console.log(copy);
+
+      // template literals
+      //   let name = "garvit dhameliya";
+      //   console.log("my name is " + name);
+      //   console.log(`my name is ${name}`);
+
+      //   let arr = ["garvit", "ram", "test"];
+      //   console.log(arr[0]);
+
+      //   let [ram, garvit, test] = arr;
+
+      //   console.log(test);
+
+      //   const submit = () => {
+      //     let email = document.getElementById("email").value;
+      //     let password = document.getElementById("pass").value;
+
+      //     let data = {
+      //       email,
+      //       password,
+      //     };
+
+      //     let { em, pass } = data;
+
+      //     console.log(em);
+      //   };
+
+      let data = {
+        name: "garvit",
+        password: "123",
+      };
+
+      let { name, password } = data;
+
+      console.log(name);
+    </script>
+  </body>
+</html>
