@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="email" />
+    <input type="text" id="password" />
+    <input type="text" id="role" />
+    <button onclick="login()">Login</button>
+
+    <script>
+      let role = ["admin", "user"];
+      let username = "garvit@gmail.com";
+      let pass = "123";
+
+      const login = () => {
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let rolee = document.getElementById("role").value;
+        console.log(rolee);
+        if (role.includes(rolee)) {
+          if (username === email && pass === password && rolee === "admin") {
+            console.log("login success");
+            location.href = "./pages/admin.html";
+          } else if (
+            username === email &&
+            pass === password &&
+            rolee === "user"
+          ) {
+            location.href = "./pages/user.html";
+          } else {
+            console.log("invalid credential!");
+          }
+        } else {
+          console.log("role is not include");
+        }
+      };
+    </script>
+  </body>
+</html>
