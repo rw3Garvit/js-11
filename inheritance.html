@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Car {
+        constructor(name, amount, model) {
+          this.name = name;
+          this.amount = amount;
+          this.model = model;
+        }
+
+        printDetail() {
+          console.log(
+            `Your car detail : name : ${this.name}, amount : ${this.amount}, model No: ${this.model}`
+          );
+        }
+      }
+
+      class Insurance extends Car {
+        constructor(name, amount, model, emi) {
+          super(name, amount, model);
+          this.emi = emi;
+        }
+
+        printInsurance() {
+          console.log(
+            `Your ins car is : ${this.name} and your emi is ${this.emi}`
+          );
+
+          this.printDetail();
+        }
+      }
+
+      //   let c1 = new Car("bmw", 300, "123#");
+      //   c1.printDetail();
+
+      let i1 = new Insurance("bmw", 300, "123$", 200);
+      i1.printInsurance();
+    </script>
+  </body>
+</html>

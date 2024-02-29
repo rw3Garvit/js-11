@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Bank {
+        constructor(name, email, amount) {
+          this.name = name;
+          this.email = email;
+          this.amount = amount;
+        }
+
+        deposite(inr) {
+          this.amount += inr;
+          console.log(`${inr} is deposite`);
+        }
+
+        checkBalance() {
+          console.log(`Your balance is : ${this.amount}`);
+        }
+      }
+
+      let u1 = new Bank("Garvit", "Garvit@gmail.com", 6000);
+      u1.checkBalance();
+
+      u1.deposite(100000);
+      u1.checkBalance();
+
+      let u2 = new Bank("rohit", "rohit@gmail.com", 7000);
+      u2.checkBalance();
+      u2.deposite(1000);
+      u2.checkBalance();
+    </script>
+  </body>
+</html>
