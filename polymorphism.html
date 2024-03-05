@@ -5,5 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <script>
+      class fruit {
+        print() {
+          console.log("fruit called");
+        }
+      }
+      class person extends fruit {
+        print() {
+          console.log("person called");
+        }
+        // add() {
+        //   console.log("add called");
+        // }
+      }
+      class child extends person {
+        print(a, b) {
+          console.log(a + b);
+        }
+      }
+
+      let c1 = new child();
+      c1.print();
+      // c1.add();
+
+      // let p1 = new person();
+      // p1.print();
+    </script>
+  </body>
 </html>
