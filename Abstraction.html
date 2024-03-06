@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Student(namee, agee) {
+        let name = namee;
+        let age = agee;
+
+        let FutureAge = () => {
+          age = age + 20;
+          return age;
+        };
+
+        this.print = () => {
+          console.log(name);
+          let result = FutureAge();
+          console.log("Tame atla varsh jivva na cho = ", result);
+        };
+      }
+
+      let s1 = new Student("Garvit", 21);
+      s1.print();
+
+      let s2 = new Student("user", 22);
+      s2.print();
+
+
+    </script>
+  </body>
+</html>
