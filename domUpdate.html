@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="row"></div>
+
+    <script>
+      let row = document.getElementById("row");
+
+      let arr = [
+        {
+          name: "user",
+          desc: "this is user",
+          age: "21",
+        },
+        {
+          name: "demo",
+          desc: "this is user",
+          age: "21",
+        },
+        {
+          name: "papu",
+          desc: "this is user",
+          age: "21",
+        },
+        {
+          name: "ram",
+          desc: "this is user",
+          age: "21",
+        },
+      ];
+
+      //   arr.forEach(loadData);
+
+      //   function loadData(val) {
+      //     console.log(val, "val");
+
+      //     let card = document.createElement("div");
+      //     card.innerHTML = `<h1>${val.name}</h1>
+      //                     <h2>${val.age}</h2>
+      //                     <p>${val.desc}</p>
+      //     `;
+      //     row.appendChild(card);
+      //   }
+
+      arr.map((val, ind) => {
+        let card = document.createElement("div");
+        card.innerHTML = `<h1>${val.name}</h1>
+                          <h2>${val.age}</h2>
+                          <p>${val.desc}</p>
+<button>add</button>
+          `;
+        row.appendChild(card);
+      });
+    </script>
+  </body>
+</html>

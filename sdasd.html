@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      class restaurant {
+        constructor(name, item) {
+          this.item = item;
+        }
+        menu() {
+          this.item = [
+            {
+              name: "ABC",
+              price: 100,
+              rating: 4.6,
+            },
+            {
+              name: "DEF",
+              price: 120,
+              rating: 3.5,
+            },
+            {
+              name: "GHI",
+              price: 140,
+              rating: 5.6,
+            },
+            {
+              name: "JKL",
+              price: 160,
+              rating: 4.5,
+            },
+            {
+              name: "MNO",
+              price: 180,
+              rating: 4,
+            },
+            {
+              name: "PQR",
+              price: 100,
+              rating: 4,
+            },
+            {
+              name: "STU",
+              price: 120,
+              rating: 3.5,
+            },
+            {
+              name: "VWX",
+              price: 140,
+              rating: 3.4,
+            },
+            {
+              name: "YZA",
+              price: 160,
+              rating: 4.5,
+            },
+            {
+              name: "BCD",
+              price: 180,
+              rating: 4,
+            },
+          ];
+
+          console.log("Total Items In Manu Are =", this.item.length);
+
+          let sum = 0;
+          for (let i = 0; i < this.item.length; i++) {
+            sum = sum + this.item[i].rating;
+          }
+          let avg = sum / this.item.length;
+          console.log("Average Rating Of This Manu =", avg);
+        }
+        addItem() {
+          console.log("After Add New Items");
+
+          this.item.push({
+            name: "DAB",
+            price: 200,
+            rating: 4.5,
+          });
+          console.log("Total Items In Manu Are =", this.item.length);
+          console.log(this.item, "asdfhfgjhgasdfsddfhfscdfff");
+          let sum = 0;
+          for (let i = 0; i < this.item.length; i++) {
+            sum = sum + this.item[i].rating;
+          }
+          let avg = sum / this.item.length;
+          console.log("Average Rating Of This Manu =", avg);
+        }
+
+        removeItem() {
+          console.log("After Removing Items");
+          this.item.splice(1, 5);
+          console.log("Total Items In Manu Are =", this.item.length);
+          console.log(this.item);
+
+          let sum = 0;
+          for (let i = 0; i < this.item.length; i++) {
+            sum = sum + this.item[i].rating;
+          }
+          let avg = sum / this.item.length;
+          console.log("Average Rating Of This Manu =", avg);
+        }
+      }
+
+      let m1 = new restaurant();
+      m1.menu();
+      m1.addItem();
+      m1.removeItem();
+    </script>
+  </body>
+</html>
