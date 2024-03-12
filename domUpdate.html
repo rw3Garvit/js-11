@@ -6,10 +6,22 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="row"></div>
+    <!-- <div id="row"></div> -->
+
+    <table border="1">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Age</td>
+          <td>Desc</td>
+          <td>Button</td>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
 
     <script>
-      let row = document.getElementById("row");
+      let tbody = document.getElementById("tbody");
 
       let arr = [
         {
@@ -48,13 +60,13 @@
       //   }
 
       arr.map((val, ind) => {
-        let card = document.createElement("div");
-        card.innerHTML = `<h1>${val.name}</h1>
-                          <h2>${val.age}</h2>
-                          <p>${val.desc}</p>
-<button>add</button>
+        let tr = document.createElement("tr");
+        tr.innerHTML = `<td>${val.name}</td>
+                          <td>${val.age}</td>
+                          <td>${val.desc}</td>
+                          <td><button>add</button></td>
           `;
-        row.appendChild(card);
+        tbody.appendChild(tr);
       });
     </script>
   </body>
