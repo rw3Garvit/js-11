@@ -6,28 +6,58 @@
     <title>Document</title>
   </head>
   <body>
+    <input type="text" name="name" id="name" />
+    <input type="number" name="age" id="age" />
+    <button onclick="addData()">Add</button>
+    <button onclick="clearData()">Clear</button><br /><br />
+
+    <table border="1" cellspacing="0" cellpadding="10px">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
     <script>
-      //storage
-      //   console.log(localStorage);
-      //   console.log(sessionStorage);
-      //   console.log(indexedDB);
+      let list = JSON.parse(localStorage.getItem("list")) || [];
+      let tbody = document.getElementById("tbody");
 
-      //   let result = localStorage.getItem("name");
-      //   console.log(result);
+      //load data
+      let loadData = () => {
+        list.map((val, ind) => {
+          let tr = document.createElement("tr");
+          tr.innerHTML = `
+                          <td>${val.name}</td>
+                          <td>${val.age}</td>
+                          `;
+          tbody.appendChild(tr);
+        });
+      };
 
-      //   localStorage.clear();
+      //add data
+      let addData = () => {
+        let name = document.getElementById("name").value;
+        let age = document.getElementById("age").value;
 
-      //   let name = "ram";
+        let data = {
+          name,
+          age,
+        };
+        list.push(data);
 
-      //   localStorage.setItem("name", name);
+        localStorage.setItem("list", JSON.stringify(list));
+        location.reload();
+      };
 
-      //   localStorage.removeItem("name");
+      let clearData = () => {
+        localStorage.clear();
+        location.reload();
+      };
 
-      //   let arr = [1, 2, 3];
-      //   localStorage.setItem("data", JSON.stringify(arr));
-
-      //   let result = JSON.parse(localStorage.getItem("data"));
-      //   console.log(result);
+      loadData();
     </script>
   </body>
 </html>
