@@ -16,6 +16,7 @@
         <tr>
           <th>Name</th>
           <th>Age</th>
+          <th>Remove</th>
         </tr>
       </thead>
       <tbody id="tbody"></tbody>
@@ -32,6 +33,8 @@
           tr.innerHTML = `
                           <td>${val.name}</td>
                           <td>${val.age}</td>
+                          <td><button onclick="removeData(${ind})">Delete</button></td>
+                          <td><button >Update</button></td>
                           `;
           tbody.appendChild(tr);
         });
@@ -56,6 +59,20 @@
         localStorage.clear();
         location.reload();
       };
+
+      //delete data
+      function removeData(index) {
+        console.log(index);
+        let result = list[index];
+        console.log(result);
+        console.log("deleted success");
+
+        let newlist = list.filter((val) => val.name !== result.name);
+        console.log(newlist);
+
+        localStorage.setItem("list", JSON.stringify(newlist));
+        location.reload();
+      }
 
       loadData();
     </script>
