@@ -8,6 +8,10 @@
   <body>
     <input type="text" name="name" id="name" />
     <input type="number" name="age" id="age" />
+    Male
+    <input type="radio" name="gender" value="male" checked />
+    Female
+    <input type="radio" name="gender" value="female" />
     <button onclick="addData()">Add</button>
     <button onclick="clearData()">Clear</button><br /><br />
 
@@ -49,6 +53,8 @@
       let addData = () => {
         let name = document.getElementById("name").value;
         let age = document.getElementById("age").value;
+        // let gender = document.querySelector("input[name=gender]:checked").value;
+        // console.log(gender);
 
         let data = {
           name,
