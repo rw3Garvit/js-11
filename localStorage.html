@@ -11,6 +11,11 @@
     <button onclick="addData()">Add</button>
     <button onclick="clearData()">Clear</button><br /><br />
 
+    <input type="text" name="name" id="viewname" />
+    <input type="number" name="age" id="viewage" />
+    <input type="hidden" name="index" id="index" />
+    <button onclick="updateData()">save changes</button><br /><br />
+
     <table border="1" cellspacing="0" cellpadding="10px">
       <thead>
         <tr>
@@ -34,7 +39,7 @@
                           <td>${val.name}</td>
                           <td>${val.age}</td>
                           <td><button onclick="removeData(${ind})">Delete</button></td>
-                          <td><button >Update</button></td>
+                          <td><button onClick="viewData(${ind})" >View</button></td>
                           `;
           tbody.appendChild(tr);
         });
@@ -71,6 +76,34 @@
         console.log(newlist);
 
         localStorage.setItem("list", JSON.stringify(newlist));
+        location.reload();
+      }
+
+      //view data
+      function viewData(index) {
+        let data = list[index];
+        console.log(data);
+
+        document.getElementById("viewname").value = data.name;
+        document.getElementById("viewage").value = data.age;
+        document.getElementById("index").value = index;
+      }
+
+      //final update
+      function updateData() {
+        let index = document.getElementById("index").value;
+        let name = document.getElementById("viewname").value;
+        let age = document.getElementById("viewage").value;
+        let data = {
+          name,
+          age,
+        };
+
+        console.log(data);
+
+        list.splice(index, 1, data);
+
+        localStorage.setItem("list", JSON.stringify(list));
         location.reload();
       }
 
