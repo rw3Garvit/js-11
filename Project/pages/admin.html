@@ -11,6 +11,7 @@
     <input type="text" id="productName" />
     <input type="number" id="price" />
     <input type="text" id="desc" />
+    <input type="text" id="image" />
     <button onclick="addProduct()">add</button>
 
     <script>
@@ -21,13 +22,12 @@
           productName: document.getElementById("productName").value,
           price: document.getElementById("price").value,
           desc: document.getElementById("desc").value,
+          img: document.getElementById("image").value,
         };
 
         products.push(product);
 
         localStorage.setItem("products", JSON.stringify(products));
-
-       
       }
     </script>
   </body>
