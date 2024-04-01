@@ -6,17 +6,49 @@
     <title>Document</title>
   </head>
   <body>
+    <table>
+      <thead>
+        <tr>
+          <td>id</td>
+          <td>title</td>
+        </tr>
+      </thead>
+      <tbody id="body"></tbody>
+    </table>
+
     <script>
-      fetch("https://jsonplaceholder.typicode.com/todos")
-        .then((res) => {
-          res
-            .json()
-            .then((result) => {
-              console.log(result);
-            })
-            .catch((err) => console.log(err));
-        })
-        .catch((error) => console.log(error));
+      //using .then()
+      // try {
+      //   fetch("https://jsonplaceholder.typicode.com/todos").then((res) => {
+      //     res.json().then((result) => {
+      //       console.log(result);
+      //     });
+      //   });
+      // } catch (err) {
+      //   console.log(err);
+      // }
+
+      // using async await
+      //  async function getDataa () {}
+
+      let tbody = document.getElementById("body");
+
+      let getData = async () => {
+        let res = await fetch("https://jsonplaceholder.typicode.com/todos");
+        let result = await res.json();
+        console.log(result, "api 1");
+
+        result.map((val, ind) => {
+          let tr = document.createElement("tr");
+          tr.innerHTML = `
+                        <td>${val.id}</td>
+                        <td>${val.title}</td>
+                          `;
+          tbody.appendChild(tr);
+        });
+      };
+
+      getData();
     </script>
   </body>
 </html>
