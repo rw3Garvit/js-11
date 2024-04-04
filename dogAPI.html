@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="dog"></div>
+
+    <script>
+      let dog = document.getElementById("dog");
+
+      async function getDog() {
+        let res = await fetch("https://dog.ceo/api/breeds/image/random");
+        let result = await res.json();
+
+        console.log(result.message);
+        let img = document.createElement("img");
+        img.src = result.message;
+
+        dog.appendChild(img);
+      }
+
+      getDog();
+    </script>
+  </body>
+</html>
