@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function app1() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => resolve(console.log("promise app1")), 2000);
+        });
+      }
+      function app2() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => resolve(console.log("promise app2")));
+        });
+      }
+      function app3() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => resolve(console.log("prmise app3")));
+        });
+      }
+
+      async function main() {
+        console.log("hello world");
+        await app1();
+        await app2();
+        await app3();
+      }
+
+()=>{
+}
+
+      main();
+    </script>
+  </body>
+</html>
